@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Harnessing the Sun in Rajpur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #212529;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .flowchart-arrow {
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #59A5D8;
+            margin: 0 1rem;
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .kpi-icon {
+            font-size: 3rem;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .kpi-value {
+            font-size: 2.25rem;
+            font-weight: 900;
+            color: #004AAD;
+        }
+        .kpi-label {
+            font-size: 1rem;
+            color: #4A5568;
+            margin-top: 0.5rem;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        #image {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: Times New Roman;
+            color: black;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- The infographic presents the science project, its context, process, performance, and key improvements. The narrative flows from regional opportunity to project details and finally to future improvements. -->
+
+    <header class="bg-[#004AAD] text-white text-center py-12 px-4">
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight">Harnessing the Sun</h1>
+        <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-blue-200">
+            Visualizing a DIY Solar-to-Hydrogen Science Project for Rajpur, Madhya Pradesh
+        </p>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+
+        <section id="opportunity" class="mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-3xl font-bold mb-3">The Solar Opportunity in Central India</h2>
+                <p class="text-lg text-gray-600">
+                    Our project leverages the immense solar potential of regions like Rajpur. With abundant sunshine, Central India is a prime location for demonstrating the power of concentrated solar energy.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="kpi-card">
+                    <div class="kpi-icon" style="color: #F7B32B;">
+                        ☀️
+                    </div>
+                    <div class="kpi-value">
+                        4-6.5
+                    </div>
+                    <div class="kpi-label">
+                        kWh/m²/day (DNI)
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">
+                        India receives powerful Direct Normal Irradiance, the key resource for this technology.
+                    </p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon" style="color: #59A5D8;">
+                        📅
+                    </div>
+                    <div class="kpi-value">
+                        200-250
+                    </div>
+                    <div class="kpi-label">
+                        Sunny Days Annually
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">
+                        A high number of clear days makes solar thermal projects consistently viable.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-3xl font-bold mb-3">The Energy Conversion Journey</h2>
+                <p class="text-lg text-gray-600">
+                    This project demonstrates a fascinating multi-step energy conversion, transforming raw sunlight into a clean, storable fuel. Each stage plays a critical role in the final production of hydrogen.
+                </p>
+            </div>
+            <div class="section-card max-w-5xl mx-auto p-8">
+                <div class="flex flex-col md:flex-row items-center justify-around">
+                    <div class="flowchart-step p-4">
+                        <div class="text-5xl mb-2">
+                            ☀️
+                        </div>
+                        <h3 class="font-bold text-lg text-[#004AAD]">1. Solar Concentrator</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            A parabolic mirror focuses sunlight to generate intense heat.
+                        </p>
+                    </div>
+                    <div class="flowchart-arrow transform rotate-90 md:rotate-0">
+                        ➔
+                    </div>
+                    <div class="flowchart-step p-4">
+                        <div class="text-5xl mb-2">
+                            💨
+                        </div>
+                        <h3 class="font-bold text-lg text-[#004AAD]">2. High-Temp Steam</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            The intense heat turns water into high-temperature steam in a boiler.
+                        </p>
+                    </div>
+                    <div class="flowchart-arrow transform rotate-90 md:rotate-0">
+                        ➔
+                    </div>
+                    <div class="flowchart-step p-4">
+                        <div class="text-5xl mb-2">
+                            ⚡️
+                        </div>
+                        <h3 class="font-bold text-lg text-[#004AAD]">3. Direct Steam Electrolysis</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Hot steam is fed directly into an electrolyzer, dramatically reducing the electrical energy needed to split H₂O.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-to-use-in-industry" class="mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-3xl font-bold mb-3">How to Use in Industry</h2>
+                <p class="text-lg text-gray-600">
+                    While our model is for a science fair, the core principles can be scaled up dramatically for industrial use. This advanced method is known as High-Temperature Steam Electrolysis.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="kpi-card text-left">
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Advanced Concentrators</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Industrial plants use large fields of mirrors (heliostats) to focus sunlight on a single tower.</li>
+                        <li>Automated tracking systems ensure mirrors are always perfectly aligned with the sun for maximum efficiency.</li>
+                    </ul>
+                </div>
+                <div class="kpi-card text-left">
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">High-Temperature Electrolysis</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Industrial production uses Solid Oxide Electrolysis Cells (SOECs), which are specifically designed for this process.</li>
+                        <li>This technology uses heat (from steam) to reduce the electrical energy required for splitting water, resulting in higher overall efficiency.</li>
+                    </ul>
+                </div>
+                <div class="kpi-card text-left">
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Waste Heat Integration</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Excess heat from other industrial processes can be captured and used to create the steam.</li>
+                        <li>This reduces the need for primary energy input, making the overall system extremely efficient.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- New section to explain the process through an image/diagram - with corrected focus -->
+        <section id="explaining-through-image" class="mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-3xl font-bold mb-3">Understanding the System Components Through a Diagram</h2>
+                <p class="text-lg text-gray-600">
+                    This diagram breaks down the different parts of the system and explains the role each component plays in converting sunlight into hydrogen.
+                </p>
+            </div>
+            <div class="section-card max-w-6xl mx-auto p-8">
+                <div class="flex flex-col lg:flex-row items-center gap-8">
+                    <div class="flex-shrink-0 w-full lg:w-2/3">
+                        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgEGYNA4q1DN6B5kJ6xnH2x6b4eehjoOeuGTKQ26YhvNBYDblY7c0azfFY81AknVqzdHGoYBY5pQM5Q5xg4ZX25KWwDDP32MMem0pANvoMPDowIxEjkIaUvTRDe3fO8WNHqbJllbyS9rBzmJT4TKzNf8Q1n_sBJWPIZ2IWUbDUabK7uDHoCclVCA3gAQA8" alt="Industrial Solar Concentrator Power Plant Diagram" class="rounded-lg shadow-l w-full" id="image">
+                    </div>
+                    <div class="flex-grow text-gray-700 space-y-4 lg:w-1/3">
+                        <h3 class="text-2xl font-bold text-blue-800">How the System Works</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li><span class="font-bold">The Mirrors:</span> These mirrors are designed to reflect and concentrate the sun's rays onto a single point, generating intense heat.</li>
+                            <li><span class="font-bold">The Boiler:</span> The concentrated heat is directed at a boiler, which rapidly turns water into high-temperature steam.</li>
+                            <li><span class="font-bold">The Turbine/Motor:</span> The powerful steam is used to spin a turbine, which in turn drives a motor to generate electricity.</li>
+                            <li><span class="font-bold">The Electrolyzer:</span> This electricity is then fed into an electrolyzer to split the water molecules ($H_2O$) into hydrogen ($H_2$) and oxygen ($O_2$).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="system-performance" class="mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-3xl font-bold mb-3">System Performance & Efficiency</h2>
+                <p class="text-lg text-gray-600">
+                    Your project emphasizes the importance of minimizing energy loss. This chart shows how over 50% of the energy can be successfully converted to hydrogen by using a direct steam electrolysis method.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="section-card">
+                    <h3 class="text-xl font-bold text-center mb-4">Illustrative Energy Pathway</h3>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="efficiencyChart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-4">
+                        This donut chart shows how initial solar energy is converted, with minimized losses. The final segment represents the energy successfully stored as hydrogen.
+                    </p>
+                </div>
+                <div class="section-card">
+                    <h3 class="text-xl font-bold text-center mb-4">Power Output vs. Sunlight</h3>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="powerChart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-4">
+                        This graph demonstrates a direct correlation: as the intensity of sunlight (Solar Irradiance) increases, so does the electrical power generated by the system.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-3xl font-bold mb-3">Key Advantages of High-Efficiency Systems</h2>
+                <p class="text-lg text-gray-600">
+                    This system is a powerful demonstration of integrated solutions, producing not only clean energy but also showcasing a highly efficient process.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        💡
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Green Hydrogen Fuel</h3>
+                    <p class="text-gray-600">
+                        Produces a clean, storable energy carrier, introducing the core concept of a future hydrogen economy.
+                    </p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        ♻️
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">High-Temperature Efficiency</h3>
+                    <p class="text-gray-600">
+                        Utilizing thermal energy directly in the electrolysis process significantly increases overall system efficiency.
+                    </p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        🌍
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Sustainable & Scalable</h3>
+                    <p class="text-gray-600">
+                        The core principles can be applied to large-scale industrial plants, making this a model for future green energy solutions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="safety">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-3xl font-bold mb-3">Safety First: A Responsible Approach</h2>
+                <p class="text-lg text-gray-600">
+                    This project involves high temperatures and pressures. Adhering to strict safety protocols is non-negotiable for a successful and responsible demonstration.
+                </p>
+            </div>
+            <div class="section-card max-w-4xl mx-auto">
+                <ul class="space-y-4">
+                    <li class="flex items-start"><span class="text-2xl mr-4 text-[#004AAD]">👓</span><div>
+                        <span class="font-bold">Eye Protection:</span> Always wear solar-rated glasses when near the concentrator's focal point.
+                    </div>
+                    </li>
+                    <li class="flex items-start"><span class="text-2xl mr-4 text-[#004AAD]">🔥</span><div>
+                        <span class="font-bold">Heat Protection:</span> Use heat-resistant gloves when handling hot components like the receiver and steam lines.
+                    </div>
+                    </li>
+                    <li class="flex items-start"><span class="text-2xl mr-4 text-[#004AAD]">🛡️</span><div>
+                        <span class="font-bold">Pressure Valve:</span> A pressure relief valve is mandatory on the steam generator to prevent dangerous pressure buildup.
+                    </div>
+                    </li>
+                    <li class="flex items-start"><span class="text-2xl mr-4 text-[#004AAD]">👨‍🏫</span><div>
+                        <span class="font-bold">Adult Supervision:</span> All work must be conducted under the direct supervision of a knowledgeable adult.
+                    </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center mt-12 py-8 px-4">
+        <p class="max-w-3xl mx-auto">
+            This project aligns with national goals for renewable energy and serves as a microcosm of larger, sustainable solutions. It aims to inspire the next generation of innovators in Rajpur and across Madhya Pradesh.
+        </p>
+    </footer>
+
+    <script>
+        const processLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const brilliantBluesPalette = {
+            primary: '#004AAD',
+            secondary: '#59A5D8',
+            accent: '#F7B32B',
+            light: '#BEE9E8',
+            dark: '#6290C8',
+        };
+
+        const efficiencyCtx = document.getElementById('efficiencyChart').getContext('2d');
+        new Chart(efficiencyCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Energy Loss (Thermal & Electrical)', 'Useful Energy (Hydrogen)'],
+                datasets: [{
+                    label: 'Energy Pathway',
+                    data: [50, 50],
+                    backgroundColor: [
+                        '#BEE9E8',
+                        '#F7B32B'
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const powerCtx = document.getElementById('powerChart').getContext('2d');
+        new Chart(powerCtx, {
+            type: 'line',
+            data: {
+                labels: ['200', '300', '400', '500', '600', '700', '800', '900'],
+                datasets: [{
+                    label: 'Power Output (Watts)',
+                    data: [0.5, 1.2, 2.1, 3.5, 5.0, 6.8, 8.9, 11.2],
+                    borderColor: brilliantBluesPalette.primary,
+                    backgroundColor: 'rgba(0, 74, 173, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Power Output (Watts)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Solar Irradiance (W/m²)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
